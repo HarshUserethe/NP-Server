@@ -16,10 +16,7 @@ app.use("/api/records", recordRoutes);
 // MongoDB Connection
 const uri = 'mongodb+srv://useretheharsh2211:aO27cssN921WUxXt@cluster0.jgod4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 mongoose
-  .connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(uri)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error("Database Connection Error:", err.message));
 
