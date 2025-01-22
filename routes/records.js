@@ -23,6 +23,7 @@ router.put("/:id", async (req, res) => {
   res.json(updated);
 });
 
+
 // Schedule a task to update total cost at 8 AM every day
 // cron.schedule("50 10 * * *", async () => {
 //   try {
@@ -43,12 +44,12 @@ router.put("/:id", async (req, res) => {
 //   }
 // });
 
-// Schedule a task to run at 10:50 AM IST every day
+
 cron.schedule(
-  "10 8 * * *", // 10:50 AM
+  '0 8 * * *',
   async () => {
     try {
-      console.log("Running daily cost update job at 10:50 AM IST");
+      console.log("Running daily cost update job at 10:00 AM IST");
       const weekdays = [7, 6, 6, 6, 6, 7, 7]; // Sunday to Saturday prices
       const todayCost = weekdays[new Date().getDay()];
 

@@ -33,5 +33,9 @@ mongoose.connection.on("disconnected", () => {
   console.log("Mongoose disconnected from DB");
 });
 
+app.get('/ping', (req, res) => {
+  res.send("Welcome to server");
+})
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
